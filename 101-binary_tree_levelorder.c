@@ -25,12 +25,12 @@ size_t recursive_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * print_level - prints a specific level of a binary tree.
+ * print_lvl - prints a specific level of a binary tree.
  * @tree: the root of the tree.
  * @level_number: the number of the level to print.
  * @func: is a pointer to a function to call for each node.
  */
-void print_level(const binary_tree_t *tree, int level_number, void (*func)(int))
+void print_lvl(const binary_tree_t *tree, int level_number, void (*func)(int))
 {
 	if (!tree | !func)
 		return;
@@ -39,8 +39,8 @@ void print_level(const binary_tree_t *tree, int level_number, void (*func)(int))
 		func(tree->n);
 	else
 	{
-		print_level(tree->left, level_number - 1, func);
-		print_level(tree->right, level_number - 1, func);
+		print_lvl(tree->left, level_number - 1, func);
+		print_lvl(tree->right, level_number - 1, func);
 	}
 }
 
