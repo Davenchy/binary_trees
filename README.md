@@ -5,22 +5,27 @@
 - To build and run task
 
 ```bash
-$ make run TASK=0
+$ make run task=0
 ```
 
 - To rebuild and run task
 
 ```bash
-$ make rerun TASK=0
+$ make rerun task=0
 ```
 
 - You can add extra c files to the build
 - Let's say you want to build a task that has a dependency from previous tasks
-- The dependency file name is `0-binary_tree_node.c`
+- The dependency files name are `0-binary_tree_node.c`, `1-binary_tree_insert_left.c`, `2-binary_tree_insert_right.c`
 
 ```bash
-$ make run TASK=1 EXTRA="binary_tree_node"
+$ make run task=16 extra="binary_tree_node binary_tree_insert*"
+# OR
+$ make rerun task=16 extra="binary_tree_node" files="*-binary_tree_insert*.c"
 ```
+
+- The `extra` variable is the same as the `files` variable the only deference is
+that the `extra` variable adds `*-` before the **wildcard** and `.c` after it.
 
 ### Make Targets
 
