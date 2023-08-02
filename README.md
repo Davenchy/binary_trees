@@ -27,6 +27,8 @@ $ make rerun task=16 extra="binary_tree_node" files="*-binary_tree_insert*.c"
 - The `extra` variable is the same as the `files` variable the only deference is
 that the `extra` variable adds `*-` before the **wildcard** and `.c` after it.
 
+- add `g=1` to build with the `-g` flag
+
 ### Make Targets
 
 - `build`: builds the task chosen by the `TASK` variable with `EXTRA`

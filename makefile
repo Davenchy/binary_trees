@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89
+CFLAGS = -Wall -Wextra -Werror -pedantic -std=gnu89 $(if $(g), -g)
 NAME = a.out
 SRC = $($(task)-main.c) $(wildcard $(task)-*.c)
 SRC += $(foreach file, $(files), $(wildcard $(file)))
