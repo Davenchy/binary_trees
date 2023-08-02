@@ -24,18 +24,16 @@ int has_node(binary_tree_t *root, binary_tree_t *node)
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 																		 const binary_tree_t *second)
 {
-	binary_tree_t *min = NULL, *max = NULL;
+	binary_tree_t *ptr = NULL;
 
 	if (!first || !second)
 		return (NULL);
 	if (first == second)
 		return ((binary_tree_t *)first);
 
-	max = (binary_tree_t *)(first->n > second->n ? first : second);
-	min = (binary_tree_t *)(first->n > second->n ? second : first);
+	ptr = (binary_tree_t *)first;
+	while (ptr && ptr->parent && !has_node(ptr->parent, (binary_tree_t *)second))
+		ptr = ptr->parent;
 
-	while (min && min->parent && !has_node(min->parent, max))
-		min = min->parent;
-
-	return ((binary_tree_t *)min->parent);
+	return ((binary_tree_t *)ptr ? ptr->parent : NULL);
 }
