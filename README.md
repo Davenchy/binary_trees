@@ -16,9 +16,10 @@ $ make rerun TASK=0
 
 - You can add extra c files to the build
 - Let's say you want to build a task that has a dependency from previous tasks
+- The dependency file name is `0-binary_tree_node.c`
 
 ```bash
-$ make run TASK=1 EXTRA="0-binary_tree_node.c"
+$ make run TASK=1 EXTRA="binary_tree_node"
 ```
 
 ### Make Targets
