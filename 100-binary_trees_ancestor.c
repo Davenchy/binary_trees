@@ -28,6 +28,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 
 	if (!first || !second)
 		return (NULL);
+	if (first == second)
+		return ((binary_tree_t *)first);
 
 	max = (binary_tree_t *)(first->n > second->n ? first : second);
 	min = (binary_tree_t *)(first->n > second->n ? second : first);
