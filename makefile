@@ -23,7 +23,7 @@ run: $(NAME)
 rerun: fclean run
 
 betty:
-	@if [ -z "$(TASK)" ]; then betty *.c *.h; else betty $(TASK)-*.c *.h; fi
+	@if [ -z "$(task)" ]; then betty *.c *.h; else betty $(task)-*.c *.h; fi
 
 clean:
 	@$(RM) *.o
