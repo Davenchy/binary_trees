@@ -69,4 +69,6 @@ bst_t *array_to_bst(int *array, size_t size);
 
 bst_t *bst_search(const bst_t *tree, int value);
 
+int binary_tree_is_heap(const binary_tree_t *tree);
+
 #endif /* _BINARY_TREES_H_ */
