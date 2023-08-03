@@ -61,4 +61,8 @@ int binary_tree_is_bst(const binary_tree_t *tree);
 int is_bst(const binary_tree_t *tree);
 int check_ancestors(const binary_tree_t *tree);
 
+bst_t *bst_insert(bst_t **tree, int value);
+
+bst_t *bst_search(const bst_t *tree, int value);
+
 #endif /* _BINARY_TREES_H_ */
