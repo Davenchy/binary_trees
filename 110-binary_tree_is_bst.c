@@ -33,12 +33,12 @@ int check_ancestors(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_bst - checks if a binary tree is a valid Binary Search Tree
+ * is_bst - checks if a binary tree is a valid Binary Search Tree
  * @tree: is a pointer to the root node of the tree to check
  *
  * Return: 1 if tree is a valid BST, and 0 otherwise
  */
-int binary_tree_is_bst(const binary_tree_t *tree)
+int is_bst(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (1);
@@ -52,5 +52,19 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 	if (!check_ancestors(tree->left) || !check_ancestors(tree->right))
 		return (0);
 
-	return (binary_tree_is_bst(tree->left) && binary_tree_is_bst(tree->right));
+	return (is_bst(tree->left) && is_bst(tree->right));
+}
+
+/**
+ * binary_tree_is_bst - checks if a binary tree is a valid Binary Search Tree
+ * @tree: is a pointer to the root node of the tree to check
+ *
+ * Return: 1 if tree is a valid BST, and 0 otherwise
+ */
+int binary_tree_is_bst(const binary_tree_t *tree)
+{
+	if (!tree)
+		return (0);
+
+	return (is_bst(tree));
 }

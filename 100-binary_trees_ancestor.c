@@ -21,8 +21,7 @@ int has_node(binary_tree_t *root, binary_tree_t *node)
  * @second: pointer to the second node
  * Return: pointer to the ancestor node
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-																		 const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
 	binary_tree_t *ptr = NULL;
 
